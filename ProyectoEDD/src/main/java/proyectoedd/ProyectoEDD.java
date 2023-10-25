@@ -61,7 +61,7 @@ public class ProyectoEDD {
                                 carrera.apilar(new Carrera(pais, ciudad));
                                 break;
                             case 3: 
-                                String paisB = JOptionPane.showInputDialog("Ingrese el pais de la carreraa buscar \n");
+                                String paisB = JOptionPane.showInputDialog("Ingrese el pais de la carrera buscar \n");
                                 String ciudadB = JOptionPane.showInputDialog("Ingrese la ciudad de la carrera a buscar\n");
                                 Object[] resultado = carrera.buscar(paisB,ciudadB);
 
