@@ -24,8 +24,8 @@ public class Cola {
         this.ultimo = ultimo;
     }
 
-    public void registrar(Equipo equipo) {
-        NodoCola nuevo = new NodoCola(equipo);
+    public void registrar(Equipo equipo, LSPilotos lista) {
+        NodoCola nuevo = new NodoCola(equipo, lista);
         if (!equipoEnLaCola(equipo.getNombreEquipo(),equipo.getPaisEquipo())) {
             if (frente == null) {
 

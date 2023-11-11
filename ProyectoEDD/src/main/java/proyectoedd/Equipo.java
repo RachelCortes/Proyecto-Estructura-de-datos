@@ -1,26 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package proyectoedd;
 
-/**
- *
- * @author Rachel
- */
 public class Equipo {
     private String nombreEquipo;
     private String paisEquipo;
+    private LSPilotos lista;
 
     public Equipo(String nombreEquipo, String paisEquipo) {
         this.nombreEquipo = nombreEquipo;
         this.paisEquipo = paisEquipo;
+        this.lista = new LSPilotos();
     }
 
-    @Override
-    public String toString() {
-        return "Nombre del Equipo: " + this.nombreEquipo + " - Pais origen: " + this.paisEquipo;
-    }
+    
 
     public String getNombreEquipo() {
         return nombreEquipo;
@@ -38,5 +30,18 @@ public class Equipo {
         this.paisEquipo = paisEquipo;
     }
 
+    public LSPilotos getLista() {
+        return lista;
+    }
+
+    public void setLista(LSPilotos lista) {
+        this.lista = lista;
+    }
+    
+    
+@Override
+    public String toString() {
+        return "Nombre del Equipo: " + this.nombreEquipo + " - Pais origen: " + this.paisEquipo + "Pilotos: " + this.lista;
+    }
     
 }
