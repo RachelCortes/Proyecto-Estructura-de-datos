@@ -1,5 +1,7 @@
 
-package proyectoedd;
+package cola;
+
+import listasimple.LSPilotos;
 
 public class Equipo {
     private String nombreEquipo;

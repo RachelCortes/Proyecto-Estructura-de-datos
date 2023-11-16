@@ -1,20 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package proyectoedd;
 
-/**
- *
- * @author Rachel
- */
+package pila;
+
 public class Carrera {
     private String pais;
     private String ciudad;
+    private int idCarrera;
 
-    public Carrera(String pais, String ciudad) {
+    public Carrera(String pais, String ciudad, int idCarrera) {
         this.pais = pais;
         this.ciudad = ciudad;
+        this.idCarrera = idCarrera;
     }
 
     public String getPais() {
@@ -32,6 +27,16 @@ public class Carrera {
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
+
+    public int getIdCarrera() {
+        return idCarrera;
+    }
+
+    public void setIdCarrera(int idCarrera) {
+        this.idCarrera = idCarrera;
+    }
+    
+    
 
     @Override
     public String toString() {

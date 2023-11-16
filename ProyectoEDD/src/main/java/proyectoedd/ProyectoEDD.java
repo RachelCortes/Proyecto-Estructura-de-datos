@@ -1,6 +1,16 @@
 package proyectoedd;
 
+import listasimple.Pilotos;
+import listasimple.LSPilotos;
+import cola.Equipo;
+import cola.Cola;
+import pila.Carrera;
+import pila.Pila;
 import javax.swing.JOptionPane;
+import listaCircular.ListaCircularclasificacion;
+import listaCircular.PilotosClasificacion;
+import listadoblecircular.LDCResultado;
+import listadoblecircular.ListaDC;
 
 public class ProyectoEDD {
 
@@ -11,14 +21,15 @@ public class ProyectoEDD {
         LSPilotos pilotos2 = new LSPilotos();
         LSPilotos pilotos3 = new LSPilotos();
         LSPilotos pilotos4 = new LSPilotos();
+        ListaCircularclasificacion listaCircular = new ListaCircularclasificacion();
+        ListaDC listaDC = new ListaDC();
+        LDCResultado resultadoCarreraOficial = new LDCResultado();
 
-        carrera.apilar(new Carrera("Qatar", "Bahrein"));
-        carrera.apilar(new Carrera("Australia", "Albert Park"));
-        carrera.apilar(new Carrera("USA", "Miami"));
-        carrera.apilar(new Carrera("Italia", "Imola"));
-        carrera.apilar(new Carrera("España", "Cataluña"));
-
-        
+        carrera.apilar(new Carrera("Qatar", "Bahrein", 1));
+        carrera.apilar(new Carrera("Australia", "Albert Park", 2));
+        carrera.apilar(new Carrera("USA", "Miami", 3));
+        carrera.apilar(new Carrera("Italia", "Imola", 4));
+        carrera.apilar(new Carrera("España", "Cataluña", 5));
 
         pilotos.insertar(new Pilotos("Lewis Hamilton", 38, "Reino Unido", "Titular", 44));
         pilotos.insertar(new Pilotos("Pierre Gasly", 27, "Francia", "Titular", 10));
@@ -45,15 +56,31 @@ public class ProyectoEDD {
         pilotos4.insertar(new Pilotos("Yuki Tsunoda", 23, "Japón", "Reserva", 22));
 
         equipo.registrar(new Equipo("Alpine", "Reino Unido"), pilotos);
-        equipo.registrar(new Equipo("Haas", "USA"),pilotos2);
-        equipo.registrar(new Equipo("Red Bull", "Austria"),pilotos3);
-        equipo.registrar(new Equipo("Ferrari", "Italia"),pilotos4);
+        equipo.registrar(new Equipo("Haas", "USA"), pilotos2);
+        equipo.registrar(new Equipo("Red Bull", "Austria"), pilotos3);
+        equipo.registrar(new Equipo("Ferrari", "Italia"), pilotos4);
+
+        listaCircular.insertar(new PilotosClasificacion("Lewis Hamilton", "Alpine", 2.33));
+        listaCircular.insertar(new PilotosClasificacion("Carlos Sainz", "Ferrari", 2.20));
+        listaCircular.insertar(new PilotosClasificacion("Sergio Perez", "Red Bull", 3.01));
+        listaCircular.insertar(new PilotosClasificacion("Fernando Alonso", "Haas", 1.78));
+        listaCircular.insertar(new PilotosClasificacion("Pierre Gasly", "Alpine", 4.56));
+        listaCircular.insertar(new PilotosClasificacion("Charles Leclerc", "Ferrari", 7.43));
+        listaCircular.insertar(new PilotosClasificacion("Max Verstappen", "Red Bull", 1.96));
+        listaCircular.insertar(new PilotosClasificacion("Lando Norris", "Haas", 5.43));  
+                
+        resultadoCarreraOficial.inserta("Lewis Hamilton", "Alpine", 2.33, 1.07);
+        resultadoCarreraOficial.inserta("Carlos Sainz", "Ferrari", 2.20, 4.21);
+        resultadoCarreraOficial.inserta("Sergio Perez", "Red Bull", 3.01, 1.66);
+        resultadoCarreraOficial.inserta("Fernando Alonso", "Haas", 1.78, 3.11);
+        resultadoCarreraOficial.inserta("Pierre Gasly", "Alpine", 4.56, 2.23);
+        resultadoCarreraOficial.inserta("Charles Leclerc", "Ferrari", 7.43, 5.27);
+        resultadoCarreraOficial.inserta("Max Verstappen", "Red Bull", 1.96, 1.24);
+        resultadoCarreraOficial.inserta("Lando Norris", "Haas", 5.43, 1.18);
         
         boolean salir = true;
-        
 
         int opcion = 0;
-        
 
         while (salir) {
 
@@ -66,13 +93,16 @@ public class ProyectoEDD {
                 case 1:
                     boolean salirCarrera = true;
                     while (salirCarrera) {
-                        
+
                         int opcionCarrera = 0;
                         opcionCarrera = Integer.parseInt(JOptionPane.showInputDialog("Ingrese a la opción que desee \n"
                                 + "1. Ver registro original de Carreras \n"
                                 + "2. Ingrese nueva Carrera \n"
                                 + "3. Ver carrera según posición \n"
-                                + "4. Salir"));
+                                + "4. Carreras de clasificación \n"
+                                + "5. Carreras Oficiales \n"
+                                + "6. Resultados de Carrera Oficial \n"
+                                + "7. Salir"));
                         switch (opcionCarrera) {
                             case 1:
                                 JOptionPane.showMessageDialog(null, carrera.toString());
@@ -81,7 +111,8 @@ public class ProyectoEDD {
 
                                 String pais = JOptionPane.showInputDialog("Ingrese el pais de la carrera \n");
                                 String ciudad = JOptionPane.showInputDialog("Ingrese la ciudad de la carrera \n");
-                                carrera.apilar(new Carrera(pais, ciudad));
+                                int idCarrera = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un identificador para la carrera \n"));
+                                carrera.apilar(new Carrera(pais, ciudad, idCarrera));
                                 break;
                             case 3:
                                 String paisB = JOptionPane.showInputDialog("Ingrese el pais de la carrera buscar \n");
@@ -99,9 +130,20 @@ public class ProyectoEDD {
                                     JOptionPane.showMessageDialog(null, "No se encontró ninguna carrera con ese nombre y ciudad.");
                                 }
                             case 4:
+                                JOptionPane.showMessageDialog(null,listaCircular.toString());
+                                break;
+                            case 5:
+                                listaCircular.trasladarListaDobleCircular(listaDC);
+                                
+                                JOptionPane.showMessageDialog(null,listaDC.toString());
+                                break;
+                            case 6:
+                                //System.out.println(resultadoCarreraOficial.toString());
+                                JOptionPane.showMessageDialog(null,resultadoCarreraOficial.toString());
+                                break;
+                            case 7:
                                 salir = true;
                                 salirCarrera = false;
-
                                 break;
                             default:
                                 JOptionPane.showMessageDialog(null, "Opcion incorrecta");

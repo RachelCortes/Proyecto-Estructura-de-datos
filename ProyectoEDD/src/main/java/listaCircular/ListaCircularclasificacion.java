@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package proyectoedd;
 
-/**
- *
- * @author Josh
- */
+package listaCircular;
+
+import listadoblecircular.ListaDC;
+
 public class ListaCircularclasificacion {
     NodoListaCircularclasificacion cabeza;
     NodoListaCircularclasificacion ultimo;
@@ -44,23 +39,28 @@ public class ListaCircularclasificacion {
             }
         }
     }
-    public void trasladarListaDobleCircular(ListaDC l){
+  
+    public void trasladarListaDobleCircular(ListaDC listaDC) {
+    if (cabeza != null) {
+        NodoListaCircularclasificacion auxiliar = cabeza;
 
-            if(cabeza != null){
-                NodoListaCircularclasificacion auxiliar = cabeza;
-                
-                    while(auxiliar != cabeza){
-                        if(auxiliar != null){
-                            l.inserta(auxiliar.getDato());
-                            break;
-                        }else{
-                            auxiliar = auxiliar.getSiguiente();
-                        }
-                    }
-            }else{
-                System.out.println("Lista vacía");
-            }
+        do {
+            PilotosClasificacion nuevoPiloto = new PilotosClasificacion(
+                auxiliar.getDato().getNombre(),
+                auxiliar.getDato().getEquipo(),
+                auxiliar.getDato().getTiempoClasificacion()
+            );
+
+            listaDC.inserta(nuevoPiloto);
+
+            auxiliar = auxiliar.getSiguiente();
+        } while (auxiliar != cabeza);
+    } else {
+        System.out.println("Lista vacía");
     }
+}
+
+    
     @Override
     public String toString() {
         String respuesta = "Lista clasificatoria: \n";

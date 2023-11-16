@@ -1,6 +1,7 @@
-package proyectoedd;
+package cola;
 
 import javax.swing.JOptionPane;
+import listasimple.LSPilotos;
 
 public class Cola {
 
@@ -133,61 +134,6 @@ public class Cola {
         
         return respuesta;
     }
-//    public void registrarEquipos() {
-//        String equipo1 = "Mercedes, Alemania";
-//        String equipo2 = "Alpine, Reino Unido";
-//        String equipo3 = "Haas, USA";
-//        String equipo4 = "Red Bull, Austria";
-//        String equipo5 = "Ferrari, Italia";
-//
-//        boolean salir = true;
-//        String opcion = "";
-//        while (salir) {
-//            validarOpcion = true;
-//            while (validarOpcion) {
-//
-//                opcion = JOptionPane.showInputDialog("Ingrese el número que corresponde a cada equipo para llenar la cola o seleccione salir \n"
-//                        + "1. " + equipo1 + "\n"
-//                        + "2. " + equipo2 + "\n"
-//                        + "3. " + equipo3 + "\n"
-//                        + "4. " + equipo4 + "\n"
-//                        + "5. " + equipo5 + "\n"
-//                        + "6. Ver información de un equipo específico\n"
-//                        + "7. Salir");
-//                validarOpciones(opcion);
-//
-//                switch (opcion) {
-//                    case "1":
-//                        registrar(equipo1);
-//                        break;
-//                    case "2":
-//                        registrar(equipo2);
-//                        break;
-//                    case "3":
-//                        registrar(equipo3);
-//                        break;
-//                    case "4":
-//                        registrar(equipo4);
-//                        break;
-//                    case "5":
-//                        registrar(equipo5);
-//                        break;
-//                    case "6":
-//                        mostrarEquipo();
-//                        break;
-//                    case "7":
-//                        salir = false;
-//                        break;
-//                    default:
-//                        JOptionPane.showMessageDialog(null, "Opcion incorrecta");
-//
-//                }
-//
-//            }
-//
-//        }
-//        JOptionPane.showMessageDialog(null, "Equipos de la formula 1 registrados:\n" + imprimirCola());
-//
-//    }
+
 
 }

@@ -1,5 +1,5 @@
 
-package proyectoedd;
+package pila;
 
 public class NodoPila {
     private Carrera elemento;

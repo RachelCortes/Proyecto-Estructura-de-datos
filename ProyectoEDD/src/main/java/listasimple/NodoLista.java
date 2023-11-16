@@ -1,5 +1,5 @@
 
-package proyectoedd;
+package listasimple;
 
 
 public class NodoLista {

@@ -1,5 +1,5 @@
 
-package proyectoedd;
+package listasimple;
 
 public class Pilotos {
     private String nombre, pais, titularOReserva;

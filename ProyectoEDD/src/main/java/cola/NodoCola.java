@@ -1,5 +1,7 @@
 
-package proyectoedd;
+package cola;
+
+import listasimple.LSPilotos;
 
 public class NodoCola {
     private NodoCola atras;

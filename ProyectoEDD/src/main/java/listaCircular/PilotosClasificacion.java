@@ -1,18 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package proyectoedd;
 
-/**
- *
- * @author Josh
- */
+package listaCircular;
+
 public class PilotosClasificacion {
     String nombre, equipo;
-    int tiempoClasificacion;
+    double tiempoClasificacion;
 
-    public PilotosClasificacion(String nombre, String equipo, int tiempoClasificacion) {
+    public PilotosClasificacion(String nombre, String equipo, double tiempoClasificacion) {
         this.nombre = nombre;
         this.equipo = equipo;
         this.tiempoClasificacion = tiempoClasificacion;
@@ -34,11 +27,11 @@ public class PilotosClasificacion {
         this.equipo = equipo;
     }
 
-    public int getTiempoClasificacion() {
+    public double getTiempoClasificacion() {
         return tiempoClasificacion;
     }
 
-    public void setTiempoClasificacion(int tiempoClasificacion) {
+    public void setTiempoClasificacion(double tiempoClasificacion) {
         this.tiempoClasificacion = tiempoClasificacion;
     }
 
