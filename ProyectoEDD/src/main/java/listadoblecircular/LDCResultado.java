@@ -43,7 +43,7 @@ public class LDCResultado {
 
   @Override
 public String toString() {
-    String respuesta = "Lista doble circular: \n";
+    String respuesta = "Carrera Oficial: \n";
     
     if (cabeza != null) {
         NodoDCResultado auxiliar = cabeza;

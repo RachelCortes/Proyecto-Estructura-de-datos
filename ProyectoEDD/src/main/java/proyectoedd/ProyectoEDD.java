@@ -1,5 +1,6 @@
 package proyectoedd;
 
+import arbol.Arbol;
 import listasimple.Pilotos;
 import listasimple.LSPilotos;
 import cola.Equipo;
@@ -21,15 +22,21 @@ public class ProyectoEDD {
         LSPilotos pilotos2 = new LSPilotos();
         LSPilotos pilotos3 = new LSPilotos();
         LSPilotos pilotos4 = new LSPilotos();
-        ListaCircularclasificacion listaCircular = new ListaCircularclasificacion();
+        ListaCircularclasificacion clasificacion1 = new ListaCircularclasificacion();
+        ListaCircularclasificacion clasificacion2 = new ListaCircularclasificacion();
+        ListaCircularclasificacion clasificacion3 = new ListaCircularclasificacion();
         ListaDC listaDC = new ListaDC();
-        LDCResultado resultadoCarreraOficial = new LDCResultado();
+        LDCResultado carreraOficial1 = new LDCResultado();
+        LDCResultado carreraOficial2 = new LDCResultado();
+        LDCResultado carreraOficial3 = new LDCResultado();
+
+        Arbol arbolCarrera1 = new Arbol();
+        Arbol arbolCarrera2 = new Arbol();
+        Arbol arbolCarrera3 = new Arbol();
 
         carrera.apilar(new Carrera("Qatar", "Bahrein", 1));
         carrera.apilar(new Carrera("Australia", "Albert Park", 2));
         carrera.apilar(new Carrera("USA", "Miami", 3));
-        carrera.apilar(new Carrera("Italia", "Imola", 4));
-        carrera.apilar(new Carrera("España", "Cataluña", 5));
 
         pilotos.insertar(new Pilotos("Lewis Hamilton", 38, "Reino Unido", "Titular", 44));
         pilotos.insertar(new Pilotos("Pierre Gasly", 27, "Francia", "Titular", 10));
@@ -60,23 +67,88 @@ public class ProyectoEDD {
         equipo.registrar(new Equipo("Red Bull", "Austria"), pilotos3);
         equipo.registrar(new Equipo("Ferrari", "Italia"), pilotos4);
 
-        listaCircular.insertar(new PilotosClasificacion("Lewis Hamilton", "Alpine", 2.33));
-        listaCircular.insertar(new PilotosClasificacion("Carlos Sainz", "Ferrari", 2.20));
-        listaCircular.insertar(new PilotosClasificacion("Sergio Perez", "Red Bull", 3.01));
-        listaCircular.insertar(new PilotosClasificacion("Fernando Alonso", "Haas", 1.78));
-        listaCircular.insertar(new PilotosClasificacion("Pierre Gasly", "Alpine", 4.56));
-        listaCircular.insertar(new PilotosClasificacion("Charles Leclerc", "Ferrari", 7.43));
-        listaCircular.insertar(new PilotosClasificacion("Max Verstappen", "Red Bull", 1.96));
-        listaCircular.insertar(new PilotosClasificacion("Lando Norris", "Haas", 5.43));  
-                
-        resultadoCarreraOficial.inserta("Lewis Hamilton", "Alpine", 2.33, 1.07);
-        resultadoCarreraOficial.inserta("Carlos Sainz", "Ferrari", 2.20, 4.21);
-        resultadoCarreraOficial.inserta("Sergio Perez", "Red Bull", 3.01, 1.66);
-        resultadoCarreraOficial.inserta("Fernando Alonso", "Haas", 1.78, 3.11);
-        resultadoCarreraOficial.inserta("Pierre Gasly", "Alpine", 4.56, 2.23);
-        resultadoCarreraOficial.inserta("Charles Leclerc", "Ferrari", 7.43, 5.27);
-        resultadoCarreraOficial.inserta("Max Verstappen", "Red Bull", 1.96, 1.24);
-        resultadoCarreraOficial.inserta("Lando Norris", "Haas", 5.43, 1.18);
+        clasificacion1.insertar(new PilotosClasificacion("Lewis Hamilton", "Alpine", 2.33));
+        clasificacion1.insertar(new PilotosClasificacion("Carlos Sainz", "Ferrari", 2.20));
+        clasificacion1.insertar(new PilotosClasificacion("Sergio Perez", "Red Bull", 3.01));
+        clasificacion1.insertar(new PilotosClasificacion("Fernando Alonso", "Haas", 1.78));
+        clasificacion1.insertar(new PilotosClasificacion("Pierre Gasly", "Alpine", 4.56));
+        clasificacion1.insertar(new PilotosClasificacion("Charles Leclerc", "Ferrari", 7.43));
+        clasificacion1.insertar(new PilotosClasificacion("Max Verstappen", "Red Bull", 1.96));
+        clasificacion1.insertar(new PilotosClasificacion("Lando Norris", "Haas", 5.43));
+
+        clasificacion2.insertar(new PilotosClasificacion("Lewis Hamilton", "Alpine", 2.22));
+        clasificacion2.insertar(new PilotosClasificacion("Carlos Sainz", "Ferrari", 2.77));
+        clasificacion2.insertar(new PilotosClasificacion("Sergio Perez", "Red Bull", 3.25));
+        clasificacion2.insertar(new PilotosClasificacion("Fernando Alonso", "Haas", 1.85));
+        clasificacion2.insertar(new PilotosClasificacion("Pierre Gasly", "Alpine", 3.21));
+        clasificacion2.insertar(new PilotosClasificacion("Charles Leclerc", "Ferrari", 6.45));
+        clasificacion2.insertar(new PilotosClasificacion("Max Verstappen", "Red Bull", 1.22));
+        clasificacion2.insertar(new PilotosClasificacion("Lando Norris", "Haas", 5.33));
+
+        clasificacion3.insertar(new PilotosClasificacion("Lewis Hamilton", "Alpine", 1.45));
+        clasificacion3.insertar(new PilotosClasificacion("Carlos Sainz", "Ferrari", 2.23));
+        clasificacion3.insertar(new PilotosClasificacion("Sergio Perez", "Red Bull", 3.10));
+        clasificacion3.insertar(new PilotosClasificacion("Fernando Alonso", "Haas", 1.87));
+        clasificacion3.insertar(new PilotosClasificacion("Pierre Gasly", "Alpine", 6.65));
+        clasificacion3.insertar(new PilotosClasificacion("Charles Leclerc", "Ferrari", 3.66));
+        clasificacion3.insertar(new PilotosClasificacion("Max Verstappen", "Red Bull", 4.28));
+        clasificacion3.insertar(new PilotosClasificacion("Lando Norris", "Haas", 2.33));
+
+        carreraOficial1.inserta("Lewis Hamilton", "Alpine", 2.33, 1.04);//1
+        carreraOficial1.inserta("Carlos Sainz", "Ferrari", 2.20, 4.12);//7
+        carreraOficial1.inserta("Sergio Perez", "Red Bull", 3.01, 1.60);//3
+        carreraOficial1.inserta("Fernando Alonso", "Haas", 1.78, 2.11);//4
+        carreraOficial1.inserta("Pierre Gasly", "Alpine", 4.56, 3.23);//6
+        carreraOficial1.inserta("Charles Leclerc", "Ferrari", 7.43, 2.27);//5
+        carreraOficial1.inserta("Max Verstappen", "Red Bull", 1.22, 1.24);//2
+        carreraOficial1.inserta("Lando Norris", "Haas", 5.33, 5.18);//7
+
+        carreraOficial2.inserta("Lewis Hamilton", "Alpine", 1.45, 2.07);//1
+        carreraOficial2.inserta("Carlos Sainz", "Ferrari", 2.23, 4.38);//6
+        carreraOficial2.inserta("Sergio Perez", "Red Bull", 3.10, 3.79);//5
+        carreraOficial2.inserta("Fernando Alonso", "Haas", 1.87, 3.17);//3
+        carreraOficial2.inserta("Pierre Gasly", "Alpine", 6.65, 2.23);//2
+        carreraOficial2.inserta("Charles Leclerc", "Ferrari", 3.66, 5.74);//8
+        carreraOficial2.inserta("Max Verstappen", "Red Bull", 4.28, 4.45);//7
+        carreraOficial2.inserta("Lando Norris", "Haas", 2.33, 3.69);//4
+
+        carreraOficial3.inserta("Lewis Hamilton", "Alpine", 1.45, 1.07);//1
+        carreraOficial3.inserta("Carlos Sainz", "Ferrari", 2.23, 4.21);//7
+        carreraOficial3.inserta("Sergio Perez", "Red Bull", 3.10, 1.66);//4
+        carreraOficial3.inserta("Fernando Alonso", "Haas", 1.87, 3.11);//6
+        carreraOficial3.inserta("Pierre Gasly", "Alpine", 6.65, 2.23);//5
+        carreraOficial3.inserta("Charles Leclerc", "Ferrari", 3.66, 5.27);//8
+        carreraOficial3.inserta("Max Verstappen", "Red Bull", 1.96, 1.24);//3
+        carreraOficial3.inserta("Lando Norris", "Haas", 4.28, 1.18);//2
+
+        arbolCarrera1.inserta(44, 1);
+        arbolCarrera1.inserta(55, 7);
+        arbolCarrera1.inserta(11, 3);
+        arbolCarrera1.inserta(14, 4);
+        arbolCarrera1.inserta(10, 6);
+        arbolCarrera1.inserta(26, 5);
+        arbolCarrera1.inserta(1, 2);
+        arbolCarrera1.inserta(4, 7);
+        
+        
+
+        arbolCarrera2.inserta(44,1);
+        arbolCarrera2.inserta(55, 6);
+        arbolCarrera2.inserta(11, 5);
+        arbolCarrera2.inserta(14, 3);
+        arbolCarrera2.inserta(10,2 );
+        arbolCarrera1.inserta(26, 8);
+        arbolCarrera2.inserta(1, 7);
+        arbolCarrera1.inserta(4, 4);
+
+        arbolCarrera3.inserta(44, 1);
+        arbolCarrera3.inserta(55, 7);
+        arbolCarrera3.inserta(11, 4);
+        arbolCarrera3.inserta(14, 6);
+        arbolCarrera3.inserta(10, 5);
+        arbolCarrera1.inserta(26, 8);
+        arbolCarrera3.inserta(1, 3);
+        arbolCarrera3.inserta(4, 2);
         
         boolean salir = true;
 
@@ -102,7 +174,8 @@ public class ProyectoEDD {
                                 + "4. Carreras de clasificación \n"
                                 + "5. Carreras Oficiales \n"
                                 + "6. Resultados de Carrera Oficial \n"
-                                + "7. Salir"));
+                                + "7. Posiciones de carreras \n"
+                                + "8. Salir"));
                         switch (opcionCarrera) {
                             case 1:
                                 JOptionPane.showMessageDialog(null, carrera.toString());
@@ -115,33 +188,49 @@ public class ProyectoEDD {
                                 carrera.apilar(new Carrera(pais, ciudad, idCarrera));
                                 break;
                             case 3:
-                                String paisB = JOptionPane.showInputDialog("Ingrese el pais de la carrera buscar \n");
-                                String ciudadB = JOptionPane.showInputDialog("Ingrese la ciudad de la carrera a buscar\n");
-                                Object[] resultado = carrera.buscar(paisB, ciudadB);
+                                int posicionBuscar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posición de la carrera a buscar:"));
+                                Carrera carreraPosicion = carrera.buscarPorPosicion(posicionBuscar);
 
-                                Carrera carrera1 = (Carrera) resultado[0];
-                                int posicion = (int) resultado[1];
-
-                                if (carrera1 != null) {
-                                    JOptionPane.showMessageDialog(null, "La carrera encontrada es: " + carrera1 + " \n"
-                                            + "Se encuentra en la posición: " + posicion);
-
+                                if (carreraPosicion != null) {
+                                    JOptionPane.showMessageDialog(null, "La carrera encontrada es: " + carreraPosicion + " \n"
+                                            + "Se encuentra en la posición: " + posicionBuscar);
                                 } else {
-                                    JOptionPane.showMessageDialog(null, "No se encontró ninguna carrera con ese nombre y ciudad.");
+                                    JOptionPane.showMessageDialog(null, "No se encontró ninguna carrera en la posición indicada.");
                                 }
+                                break;
+
                             case 4:
-                                JOptionPane.showMessageDialog(null,listaCircular.toString());
+                                JOptionPane.showMessageDialog(null, clasificacion1.toString());
+                                JOptionPane.showMessageDialog(null, clasificacion2.toString());
+                                JOptionPane.showMessageDialog(null, clasificacion3.toString());
                                 break;
                             case 5:
-                                listaCircular.trasladarListaDobleCircular(listaDC);
-                                
-                                JOptionPane.showMessageDialog(null,listaDC.toString());
+                                clasificacion1.trasladarListaDobleCircular(listaDC);
+                                clasificacion2.trasladarListaDobleCircular(listaDC);
+                                clasificacion3.trasladarListaDobleCircular(listaDC);
+                                JOptionPane.showMessageDialog(null, "Clasificación 1:\n" + clasificacion1.toString());
+                                JOptionPane.showMessageDialog(null, "Clasificación 2:\n" + clasificacion2.toString());
+                                JOptionPane.showMessageDialog(null, "Clasificación 3:\n" + clasificacion3.toString());
+
                                 break;
                             case 6:
                                 //System.out.println(resultadoCarreraOficial.toString());
-                                JOptionPane.showMessageDialog(null,resultadoCarreraOficial.toString());
+                                JOptionPane.showMessageDialog(null, carreraOficial1.toString());
+                                JOptionPane.showMessageDialog(null, carreraOficial2.toString());
+                                JOptionPane.showMessageDialog(null, carreraOficial3.toString());
                                 break;
                             case 7:
+                                StringBuilder mensajeArboles = new StringBuilder();
+                                
+                                arbolCarrera1.preorden();
+                                
+                                arbolCarrera2.preorden();
+                               
+                                arbolCarrera3.preorden();
+                                
+                                JOptionPane.showMessageDialog(null, mensajeArboles.toString());
+                                break;
+                            case 8:
                                 salir = true;
                                 salirCarrera = false;
                                 break;
@@ -161,7 +250,7 @@ public class ProyectoEDD {
                                 + "3. Ver información de equipo \n"
                                 + "4. Cambiar pilotos titulares\n"
                                 + "5. Salir"));
-                        String equipo1 = "Mercedes, Alemania";
+                        //String equipo1 = "Mercedes, Alemania";
 
                         switch (opcionEquipo) {
                             case 1:
@@ -176,8 +265,8 @@ public class ProyectoEDD {
                                 equipo.registrar(new Equipo(nombreEquipo, paisEquipo), listaPilotos);
                                 break;
                             case 3:
-                                String NombreEquipo = JOptionPane.showInputDialog("Ingrese el nombre del equipo a buscar \n");
-                                // ...
+                                //String NombreEquipo = JOptionPane.showInputDialog("Ingrese el nombre del equipo a buscar \n");
+
                                 break;
                             case 4:
                                 JOptionPane.showMessageDialog(null, "Seleccione la lista de pilotos que quiere cambiar a titular y reserva \n"

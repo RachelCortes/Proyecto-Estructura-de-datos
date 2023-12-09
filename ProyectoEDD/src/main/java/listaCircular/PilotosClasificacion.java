@@ -39,5 +39,9 @@ public class PilotosClasificacion {
     public String toString() {
         return " - Piloto: " + this.nombre + " - Equipo: " + this.equipo + " - Tiempo: " + this.tiempoClasificacion;
     }
+
+    public int getId() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

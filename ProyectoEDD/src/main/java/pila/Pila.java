@@ -8,7 +8,7 @@ public class Pila {
     public NodoPila cima;
     private boolean validarOpcion;
     private int contadorIdCarrera;
-    
+
     public NodoPila getCima() {
         return cima;
     }
@@ -30,7 +30,7 @@ public class Pila {
     }
 
     public void apilar(Carrera carrera) {
-        
+
         if (!existe(carrera.getPais(), carrera.getCiudad())) {
             if (estaVacia()) {
                 carrera.setIdCarrera(contadorIdCarrera++);
@@ -45,43 +45,54 @@ public class Pila {
             JOptionPane.showMessageDialog(null, "La carrera ya está en la pila");
         }
     }
-    
-    public boolean existe(String pais, String ciudad)
-    {
+
+    public boolean existe(String pais, String ciudad) {
         boolean respuesta = false;
-        
+
         NodoPila auxiliar = cima;
-        
-        while(auxiliar != null)
-        {
-            if(auxiliar.getElemento().getPais().equals(pais) &&  auxiliar.getElemento().getCiudad().equals(ciudad))
-            {
+
+        while (auxiliar != null) {
+            if (auxiliar.getElemento().getPais().equals(pais) && auxiliar.getElemento().getCiudad().equals(ciudad)) {
                 respuesta = true;
                 break;
-            }
-            else
-            {
+            } else {
                 auxiliar = auxiliar.getSiguiente();
             }
         }
-        
+
         return respuesta;
     }
-    public Object[] buscar(String pais, String ciudad) {
-        return buscar(cima, pais, ciudad,1);
-    }
-    private Object[] buscar(NodoPila nodoActual, String pais,String ciudad, int posicion) {
-    if (nodoActual == null) {
-        return new Object[]{null, -1}; // La carrera no se encontró en la lista
-    }
-        Carrera carrera = nodoActual.getElemento();
-    if (carrera.getPais().equals(pais) && carrera.getCiudad().equals(ciudad)) {
-        return new Object[]{carrera, posicion}; // La carrera fue encontrada en esta posición
-    }
-    
-        return buscar(nodoActual.getSiguiente(), pais, ciudad, posicion + 1);
-}
+//    public Object[] buscar(String pais, String ciudad) {
+//        return buscar(cima, pais, ciudad,1);
+//    }
+//    private Object[] buscar(NodoPila nodoActual, String pais,String ciudad, int posicion) {
+//    if (nodoActual == null) {
+//        return new Object[]{null, -1}; // La carrera no se encontró en la lista
+//    }
+//        Carrera carrera = nodoActual.getElemento();
+//    if (carrera.getPais().equals(pais) && carrera.getCiudad().equals(ciudad)) {
+//        return new Object[]{carrera, posicion}; // La carrera fue encontrada en esta posición
+//    }
+//    
+//        return buscar(nodoActual.getSiguiente(), pais, ciudad, posicion + 1);
+//}
 
+    public Carrera buscarPorPosicion(int posicion) {
+        return buscarPorPosicion(cima, posicion, 1);
+    }
+
+    private Carrera buscarPorPosicion(NodoPila nodoActual, int posicionBuscar, int posicionActual) {
+        if (nodoActual == null) {
+            return null; 
+        }
+
+        Carrera carrera = nodoActual.getElemento();
+        if (posicionBuscar == posicionActual) {
+            return carrera; 
+        }
+
+        return buscarPorPosicion(nodoActual.getSiguiente(), posicionBuscar, posicionActual + 1);
+    }
 
     public void desapilar() {
         if (estaVacia()) {
@@ -91,23 +102,17 @@ public class Pila {
         }
     }
 
-
     @Override
     public String toString() {
         NodoPila auxiliar = cima;
         String respuesta = "Carreras: \n";
-        
-        while(auxiliar != null)
-        {
+
+        while (auxiliar != null) {
             respuesta += auxiliar.toString() + "\n";
             auxiliar = auxiliar.getSiguiente();
         }
-        
+
         return respuesta;
     }
 
 }
-
-
-
-
